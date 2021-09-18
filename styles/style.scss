@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  user-select: none;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: #6c70b0;
+  a {
+    color: hsl(216, 45%, 44%);
+    text-decoration: none;
+  }
+}
+body {
+  background: #0d1323;
+}
+.grid {
+  max-width: 986px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 26px;
+  margin: 3rem auto;
+
+  &-item {
+    background: white;
+    border-radius: 12px;
+    height: 218px;
+    position: relative;
+    color: white;
+    overflow: hidden;
+
+    .content {
+      position: absolute;
+      background: #1d204b;
+      bottom: 0;
+      padding: 26px;
+      width: 100%;
+      border-radius: 12px;
+      transition: 0.15s;
+      cursor: pointer;
+      &:hover {
+        filter: brightness(170%);
+      }
+
+      .row {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 34px;
+        .icon {
+          height: 4px;
+          width: 20px;
+        }
+        &:first-child {
+          flex-direction: row;
+        }
+        &:nth-child(2) {
+          margin-bottom: 0;
+        }
+      }
+      p {
+        font-weight: 500;
+        font-size: 16px;
+      }
+      h2 {
+        font-size: 42px;
+        font-weight: 300;
+      }
+      span {
+        font-size: 14px;
+        font-weight: 400;
+        color: #c0c3f0;
+      }
+    }
+    &.main {
+      grid-row: span 2;
+      height: auto;
+      background: #1d204b;
+      .card1 {
+        padding: 26px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: #5746ea;
+        border-radius: 12px;
+        min-height: 314px;
+        .ava {
+          width: 74px;
+          height: auto;
+          border-radius: 50%;
+          border: 2px solid white;
+          margin-bottom: 36px;
+        }
+        span {
+          font-size: 14px;
+          font-weight: 300;
+          color: white;
+          opacity: 0.7;
+          margin-bottom: 10px;
+        }
+        h2 {
+          font-size: 34px;
+          font-weight: 300;
+        }
+      }
+      .card2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 26px;
+        label {
+          font-weight: 300;
+          font-size: 1rem;
+          color: #6c70b0;
+          cursor: pointer;
+          margin: 10px 0;
+          input {
+            display: none;
+
+            &:checked ~ .type {
+              color: #fff;
+            }
+          }
+          .type {
+            transition: 0.15s;
+          }
+        }
+      }
+    }
+    &:nth-child(2) {
+      background: url(../images/icon-work.svg) no-repeat top -10px right 16px / 70px
+        #ff8b64;
+    }
+    &:nth-child(3) {
+      background: url(../images/icon-play.svg) no-repeat top -10px right 16px / 70px
+        #56c2e6;
+    }
+    &:nth-child(4) {
+      background: url(../images/icon-study.svg) no-repeat top -10px right 16px /
+        70px #ff5e7d;
+    }
+    &:nth-child(5) {
+      background: url(../images/icon-exercise.svg) no-repeat top -10px right 16px /
+        70px #4bcf83;
+    }
+    &:nth-child(6) {
+      background: url(../images/icon-social.svg) no-repeat top -10px right 16px /
+        70px #7235d1;
+    }
+    &:nth-child(7) {
+      background: url(../images/icon-self-care.svg) no-repeat top -10px right 16px /
+        70px #f1c75b;
+    }
+  }
+}
+
+@media (max-width: 986px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto, 1fr);
+    width: 85%;
+    &-item {
+      max-height: 160px;
+      &.main {
+        max-height: 204px;
+        .card1 {
+          flex-direction: row;
+          min-height: auto;
+          align-items: center;
+          .ava {
+            margin-right: 18px;
+            margin-bottom: 0;
+          }
+          h2 {
+            font-size: 22px;
+          }
+        }
+        .card2 {
+          flex-direction: row;
+          p {
+            margin: 0;
+          }
+        }
+      }
+      .content {
+        .row2 {
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 0.4rem;
+          align-items: center;
+          h2 {
+            font-size: 28px;
+          }
+        }
+      }
+    }
+  }
+}
